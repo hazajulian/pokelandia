@@ -210,7 +210,7 @@ export function About() {
 
           <a
             className="button button--primary"
-            href="https://github.com/TU-USUARIO"
+            href="https://github.com/hazajulian"
             target="_blank"
             rel="noreferrer"
           >
