@@ -4,9 +4,8 @@
   "description": "Pokédex moderna desarrollada con React y PokéAPI.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f3f7fb",
+  "background_color": "#edf5ff",
   "theme_color": "#ffcb05",
-  "orientation": "portrait-primary",
   "icons": [
     {
       "src": "/poke-ico.png",

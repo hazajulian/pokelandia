@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://TU-DOMINIO.vercel.app/sitemap.xml
+Sitemap: https://pokelandia-iota.vercel.app/sitemap.xml
