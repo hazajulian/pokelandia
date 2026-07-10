@@ -1,0 +1,271 @@
+/* variables.css */
+/* Variables globales de diseño para los temas claro y oscuro. */
+
+:root {
+  /* Brand */
+  --color-primary: #ffcb05;
+  --color-primary-hover: #f2bd00;
+  --color-primary-soft: #fff3b8;
+
+  --color-secondary: #2a75bb;
+  --color-secondary-hover: #1f5f9d;
+  --color-secondary-dark: #1f4f91;
+  --color-secondary-soft: #dceeff;
+
+  --color-accent: #e3350d;
+  --color-accent-hover: #c82d0a;
+
+  /* Page backgrounds */
+  --background-color: #eef3f8;
+  --background-page: #eef3f8;
+  --background-section: #f7f9fc;
+  --background-surface: #ffffff;
+  --background-surface-alt: #e9eff6;
+  --background-overlay: rgba(12, 25, 45, 0.7);
+
+  /* Text */
+  --text-color: #233044;
+  --text-color-soft: #5c6b7d;
+  --text-color-muted: #7a8798;
+  --text-color-inverse: #ffffff;
+  --text-color-brand: #1f4f91;
+  --title-color: #17263d;
+
+  /* Header */
+  --header-background: #ffcb05;
+  --header-text-color: #17263d;
+  --header-link-hover: #2a75bb;
+  --header-shadow: 0 4px 18px rgba(31, 79, 145, 0.18);
+
+  /* Footer */
+  --footer-background: #17263d;
+  --footer-text-color: #eaf1f8;
+  --footer-text-muted: #aebdcd;
+  --footer-border-color: rgba(255, 255, 255, 0.1);
+
+  /* Buttons */
+  --background-button: #ffcb05;
+  --background-button-hover: #f2bd00;
+  --button-text-color: #17263d;
+  --button-color-border: #2a75bb;
+  --button-background-secondary: #2a75bb;
+  --button-background-secondary-hover: #1f5f9d;
+  --button-text-secondary: #ffffff;
+  --button-disabled-background: #ccd5df;
+  --button-disabled-text: #738092;
+
+  /* Cards */
+  --color-card-pokemon: #ffffff;
+  --card-background: #ffffff;
+  --card-background-hover: #f9fbfd;
+  --card-border-color: #c8d5e3;
+  --card-border-hover: #2a75bb;
+  --card-shadow: 0 10px 28px rgba(31, 79, 145, 0.12);
+  --card-shadow-hover: 0 18px 38px rgba(31, 79, 145, 0.2);
+
+  /* Pokémon card text */
+  --tittle-pokemon: #17263d;
+  --span-pokemon: #687789;
+  --backgroun-poke-text: #e6f4ff;
+
+  /* Inputs and search */
+  --input-background: #ffffff;
+  --input-text-color: #233044;
+  --input-placeholder-color: #7b8999;
+  --input-border-color: #aebdcd;
+  --input-border-focus: #2a75bb;
+  --input-shadow-focus: 0 0 0 4px rgba(42, 117, 187, 0.16);
+
+  --border-color-search-focus: #2a75bb;
+  --search-box-shadow-color: rgba(42, 117, 187, 0.28);
+  --color-search-focus: #ffffff;
+  --color-search-not-focus: #f4f8fc;
+  --button-search-shadow: rgba(31, 79, 145, 0.25);
+
+  /* Filters */
+  --filter-background: #ffffff;
+  --filter-background-hover: #e5f1fb;
+  --filter-background-active: #2a75bb;
+  --filter-text-color: #24344a;
+  --filter-text-active: #ffffff;
+  --filter-background-border: #aebdcd;
+
+  /* Borders and dividers */
+  --border-color: #cbd6e2;
+  --border-color-soft: #dde5ed;
+  --border-image-color: #aebdcd;
+  --divider-color: rgba(31, 79, 145, 0.12);
+
+  /* Shadows */
+  --shadow-color-backimage: rgba(8, 21, 40, 0.18);
+  --shadow-color-text: rgba(31, 79, 145, 0.35);
+  --shadow-sm: 0 4px 12px rgba(17, 38, 67, 0.08);
+  --shadow-md: 0 10px 25px rgba(17, 38, 67, 0.12);
+  --shadow-lg: 0 20px 45px rgba(17, 38, 67, 0.18);
+
+  /* Detail page */
+  --detail-background: #ffffff;
+  --detail-section-background: #f3f7fb;
+  --detail-section-border: #d6e0ea;
+  --text-back: #ffffff;
+
+  /* Feedback */
+  --color-success: #2e9d59;
+  --color-warning: #d98b00;
+  --color-danger: #d93a32;
+  --color-info: #2a75bb;
+
+  /* Type fallback */
+  --type-default-background: #8c98a5;
+  --type-default-text: #ffffff;
+
+  /* Layout */
+  --container-width: 1240px;
+  --container-width-wide: 1440px;
+  --header-height: 88px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-pill: 999px;
+
+  /* Transitions */
+  --transition-fast: 160ms ease;
+  --transition-base: 260ms ease;
+  --transition-slow: 420ms ease;
+
+  /* Layers */
+  --z-header: 100;
+  --z-dropdown: 200;
+  --z-overlay: 500;
+  --z-modal: 600;
+  --z-toast: 700;
+}
+
+/* Compatible con el sistema actual y con el futuro ThemeContext. */
+.dark-mode,
+[data-theme="dark"] {
+  /* Page backgrounds */
+  --background-color: #10141c;
+  --background-page: #10141c;
+  --background-section: #141a24;
+  --background-surface: #171d27;
+  --background-surface-alt: #202837;
+  --background-overlay: rgba(0, 0, 0, 0.78);
+
+  /* Text */
+  --text-color: #edf3f8;
+  --text-color-soft: #bac7d4;
+  --text-color-muted: #8f9baa;
+  --text-color-inverse: #10141c;
+  --text-color-brand: #ffcb05;
+  --title-color: #ffffff;
+
+  /* Header */
+  --header-background: #171d27;
+  --header-text-color: #ffcb05;
+  --header-link-hover: #ffffff;
+  --header-shadow: 0 4px 18px rgba(0, 0, 0, 0.38);
+
+  /* Footer */
+  --footer-background: #090c11;
+  --footer-text-color: #f3f6f9;
+  --footer-text-muted: #9eabb8;
+  --footer-border-color: rgba(255, 255, 255, 0.1);
+
+  /* Buttons */
+  --background-button: #ffcb05;
+  --background-button-hover: #ffd83f;
+  --button-text-color: #151922;
+  --button-color-border: #ffcb05;
+  --button-background-secondary: #26364c;
+  --button-background-secondary-hover: #304762;
+  --button-text-secondary: #ffffff;
+  --button-disabled-background: #303845;
+  --button-disabled-text: #777f8b;
+
+  /* Cards */
+  --color-card-pokemon: #171d27;
+  --card-background: #171d27;
+  --card-background-hover: #1d2633;
+  --card-border-color: #303b4b;
+  --card-border-hover: #ffcb05;
+  --card-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  --card-shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.4);
+
+  /* Pokémon card text */
+  --tittle-pokemon: #ffffff;
+  --span-pokemon: #b4c0cd;
+  --backgroun-poke-text: #26364c;
+
+  /* Inputs and search */
+  --input-background: #171d27;
+  --input-text-color: #f5f7fa;
+  --input-placeholder-color: #929dab;
+  --input-border-color: #394555;
+  --input-border-focus: #ffcb05;
+  --input-shadow-focus: 0 0 0 4px rgba(255, 203, 5, 0.14);
+
+  --border-color-search-focus: #ffcb05;
+  --search-box-shadow-color: rgba(255, 203, 5, 0.22);
+  --color-search-focus: #202837;
+  --color-search-not-focus: #171d27;
+  --button-search-shadow: rgba(0, 0, 0, 0.42);
+
+  /* Filters */
+  --filter-background: #171d27;
+  --filter-background-hover: #26364c;
+  --filter-background-active: #ffcb05;
+  --filter-text-color: #eaf0f5;
+  --filter-text-active: #161a22;
+  --filter-background-border: #394555;
+
+  /* Borders and dividers */
+  --border-color: #334052;
+  --border-color-soft: #283342;
+  --border-image-color: #394555;
+  --divider-color: rgba(255, 255, 255, 0.08);
+
+  /* Shadows */
+  --shadow-color-backimage: rgba(0, 0, 0, 0.45);
+  --shadow-color-text: rgba(255, 203, 5, 0.3);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.42);
+
+  /* Detail page */
+  --detail-background: #171d27;
+  --detail-section-background: #202837;
+  --detail-section-border: #344154;
+  --text-back: #ffcb05;
+
+  /* footer */
+  --footer-background: #f7f8fb;
+  --footer-text-color: #334155;
+  --footer-title-color: #1f2937;
+  --footer-text-muted: #64748b;
+  --footer-link-color: #475569;
+  --footer-divider: rgba(31, 79, 145, 0.15);
+
+  --footer-background: #171d27;
+  --footer-text-color: #e8edf6;
+  --footer-title-color: #ffffff;
+  --footer-text-muted: #9aa8bd;
+  --footer-link-color: #d6deeb;
+  --footer-divider: rgba(255, 203, 5, 0.18);
+}

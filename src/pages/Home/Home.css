@@ -1,0 +1,41 @@
+/* Home.css */
+/* Contenedor principal y estilos compartidos del Home. */
+
+.home {
+  overflow: hidden;
+
+  background: var(--background-page);
+}
+
+.home__eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+  min-height: 32px;
+
+  padding: 6px 12px;
+
+  background: rgba(255, 203, 5, 0.16);
+  color: var(--color-primary);
+
+  border: 1px solid rgba(255, 203, 5, 0.42);
+  border-radius: var(--radius-pill);
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-theme="dark"] .homeHero__title,
+.dark-mode .homeHero__title {
+  color: #ffffff;
+}
+
+@media (max-width: 390px) {
+  .home__eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+}

@@ -1,0 +1,269 @@
+/* Contact.css */
+/* Estilos de la página de contacto. */
+
+.contact {
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at 12% 12%,
+      rgba(255, 203, 5, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(42, 117, 187, 0.08),
+      transparent 24%
+    ),
+    var(--background-page);
+}
+
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.contact__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  max-width: 760px;
+}
+
+.contact__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  color: var(--color-secondary);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-7);
+}
+
+.contact__formCard,
+.contact__info {
+  padding: var(--space-7);
+}
+
+.contact__formCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact__formCard h2,
+.contact__info h3 {
+  color: var(--title-color);
+
+  font-size: 1.5rem;
+}
+
+.contact__formCard p,
+.contact__info p {
+  color: var(--text-color-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.7;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  margin-top: var(--space-3);
+}
+
+.contact__form button {
+  align-self: flex-start;
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.contact__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  margin-top: var(--space-3);
+}
+
+.contact__list li {
+  position: relative;
+
+  padding-left: 20px;
+
+  color: var(--text-color-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.contact__list li::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 9px;
+
+  width: 8px;
+  height: 8px;
+
+  background: var(--color-primary);
+
+  border-radius: 50%;
+}
+
+.contact__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+
+  margin-top: var(--space-3);
+}
+
+.contact__socials a {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--background-surface-alt);
+  color: var(--color-secondary);
+
+  border: 1px solid var(--border-color-soft);
+  border-radius: 50%;
+
+  font-size: 1.35rem;
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.contact__socials a:hover {
+  background: var(--color-secondary);
+  color: var(--text-color-inverse);
+
+  border-color: var(--color-secondary);
+
+  box-shadow: var(--shadow-md);
+
+  transform: translateY(-4px);
+}
+
+/* Tema oscuro */
+
+.dark-mode .contact__socials a,
+[data-theme="dark"] .contact__socials a {
+  background: var(--background-surface-alt);
+}
+
+.dark-mode .contact__socials a:hover,
+[data-theme="dark"] .contact__socials a:hover {
+  background: var(--color-primary);
+
+  color: #171d27;
+
+  border-color: var(--color-primary);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .contact__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact__formCard,
+  .contact__info {
+    padding: var(--space-6);
+  }
+
+  .contact__form button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact__container {
+    gap: var(--space-6);
+  }
+
+  .contact__formCard,
+  .contact__info {
+    padding: var(--space-5);
+
+    border-radius: var(--radius-lg);
+  }
+
+  .contact__formCard h2,
+  .contact__info h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact__socials {
+    justify-content: center;
+  }
+
+  .contact__socials a {
+    width: 46px;
+    height: 46px;
+
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact__formCard,
+  .contact__info {
+    padding: var(--space-4);
+  }
+
+  .contact__socials a {
+    width: 42px;
+    height: 42px;
+
+    font-size: 1.05rem;
+  }
+}

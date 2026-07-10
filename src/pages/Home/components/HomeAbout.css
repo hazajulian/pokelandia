@@ -1,0 +1,193 @@
+/* HomeAbout.css */
+/* Sección de información sobre PokéLandia. */
+
+.homeAbout {
+  background:
+    radial-gradient(
+      circle at 88% 24%,
+      rgba(255, 203, 5, 0.11),
+      transparent 25%
+    ),
+    var(--background-page);
+}
+
+.homeAbout__container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  align-items: center;
+  gap: var(--space-10);
+}
+
+.homeAbout__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.homeAbout__content p {
+  max-width: 700px;
+
+  color: var(--text-color-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.homeAbout__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+
+  margin-top: var(--space-2);
+}
+
+.homeAbout__visual {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.homeAbout__stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+
+  padding: var(--space-5);
+
+  background: var(--background-surface);
+
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.homeAbout__stat:hover {
+  border-color: var(--card-border-hover);
+
+  box-shadow: var(--shadow-md);
+
+  transform: translateX(-5px);
+}
+
+.homeAbout__stat strong {
+  min-width: 92px;
+
+  color: var(--color-secondary);
+
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  line-height: 1;
+}
+
+.homeAbout__stat span {
+  color: var(--text-color-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.93rem;
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .homeAbout,
+.dark-mode .homeAbout {
+  background:
+    radial-gradient(
+      circle at 88% 24%,
+      rgba(255, 203, 5, 0.06),
+      transparent 25%
+    ),
+    var(--background-page);
+}
+
+[data-theme="dark"] .homeAbout__stat strong,
+.dark-mode .homeAbout__stat strong {
+  color: var(--color-primary);
+}
+
+@media (max-width: 1080px) {
+  .homeAbout__container {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-7);
+  }
+
+  .homeAbout__visual {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .homeAbout__stat {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .homeAbout__visual {
+    grid-template-columns: 1fr;
+  }
+
+  .homeAbout__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .homeAbout__actions {
+    justify-content: center;
+  }
+
+  .homeAbout__stat {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .homeAbout__stat:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 560px) {
+  .homeAbout__stat {
+    padding: var(--space-4);
+  }
+
+  .homeAbout__stat strong {
+    min-width: 76px;
+  }
+
+  .homeAbout__actions {
+    width: 100%;
+  }
+
+  .homeAbout__actions .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .homeAbout__stat {
+    align-items: flex-start;
+  }
+
+  .homeAbout__stat strong {
+    min-width: 68px;
+
+    font-size: 1.55rem;
+  }
+}

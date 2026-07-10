@@ -1,0 +1,232 @@
+/* FavoriteButton.css */
+/* Botón reutilizable para agregar o quitar Pokémon de favoritos. */
+
+.favoriteButton {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  background: color-mix(
+    in srgb,
+    var(--background-surface) 88%,
+    transparent
+  );
+
+  color: var(--text-color-muted);
+
+  border: 1px solid var(--border-color-soft);
+  border-radius: var(--radius-pill);
+
+  box-shadow: var(--shadow-sm);
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.favoriteButton:hover {
+  background: color-mix(
+    in srgb,
+    var(--color-accent) 10%,
+    var(--background-surface)
+  );
+
+  color: var(--color-accent);
+
+  border-color: color-mix(
+    in srgb,
+    var(--color-accent) 42%,
+    var(--border-color-soft)
+  );
+
+  transform: scale(1.07);
+}
+
+.favoriteButton:active {
+  transform: scale(0.96);
+}
+
+.favoriteButton:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
+.favoriteButton--active {
+  background: color-mix(
+    in srgb,
+    var(--color-accent) 13%,
+    var(--background-surface)
+  );
+
+  color: var(--color-accent);
+
+  border-color: color-mix(
+    in srgb,
+    var(--color-accent) 48%,
+    var(--border-color-soft)
+  );
+}
+
+.favoriteButton__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  line-height: 1;
+
+  transition:
+    transform var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.favoriteButton:hover .favoriteButton__icon {
+  transform: scale(1.08);
+}
+
+.favoriteButton--active .favoriteButton__icon {
+  animation: favoritePulse 320ms ease;
+}
+
+/* Variantes */
+
+.favoriteButton--default,
+.favoriteButton--card {
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+}
+
+.favoriteButton--detail {
+  width: auto;
+  min-width: 46px;
+  height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  padding-inline: 16px;
+}
+
+.favoriteButton--withText {
+  width: auto;
+  min-width: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  padding-inline: 16px;
+}
+
+.favoriteButton__text {
+  white-space: nowrap;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+/* Tema oscuro */
+
+[data-theme="dark"] .favoriteButton,
+.dark-mode .favoriteButton {
+  background: color-mix(
+    in srgb,
+    var(--background-surface-alt) 86%,
+    transparent
+  );
+
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .favoriteButton:hover,
+.dark-mode .favoriteButton:hover,
+[data-theme="dark"] .favoriteButton--active,
+.dark-mode .favoriteButton--active {
+  background: color-mix(
+    in srgb,
+    var(--color-accent) 13%,
+    var(--background-surface-alt)
+  );
+}
+
+[data-theme="dark"] .favoriteButton:focus-visible,
+.dark-mode .favoriteButton:focus-visible {
+  outline-color: var(--color-primary);
+}
+
+/* Animación */
+
+@keyframes favoritePulse {
+  0% {
+    transform: scale(0.75);
+  }
+
+  45% {
+    transform: scale(1.28);
+  }
+
+  70% {
+    transform: scale(0.92);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 520px) {
+  .favoriteButton,
+  .favoriteButton--default,
+  .favoriteButton--card {
+    width: 36px;
+    height: 36px;
+  }
+
+  .favoriteButton--detail,
+  .favoriteButton--withText {
+    min-height: 42px;
+
+    padding-inline: 14px;
+  }
+
+  .favoriteButton__text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .favoriteButton--detail,
+  .favoriteButton--withText {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .favoriteButton__text {
+    font-size: 0.78rem;
+  }
+}

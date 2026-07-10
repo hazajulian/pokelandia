@@ -1,0 +1,268 @@
+/* Toast.css */
+/* Estilos del componente reutilizable de notificaciones. */
+
+.toastContainer {
+  position: fixed;
+
+  right: var(--space-6);
+  bottom: var(--space-6);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  z-index: var(--z-toast);
+
+  pointer-events: none;
+}
+
+.toast {
+  min-width: 340px;
+  max-width: 420px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+
+  padding: var(--space-4);
+
+  background: var(--background-surface);
+
+  border: 1px solid var(--border-color-soft);
+  border-left: 5px solid var(--color-info);
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-lg);
+
+  pointer-events: auto;
+
+  animation: toastEnter 260ms ease;
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.toast:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 55px rgba(17, 38, 67, 0.22);
+}
+
+.toast__icon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: var(--background-surface-alt);
+
+  font-size: 1.25rem;
+}
+
+.toast__content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  min-width: 0;
+}
+
+.toast__title {
+  color: var(--title-color);
+
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.toast__message {
+  color: var(--text-color-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.toast__close {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  background: transparent;
+  color: var(--text-color-muted);
+
+  border-radius: 50%;
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.toast__close:hover {
+  background: var(--background-surface-alt);
+
+  color: var(--color-danger);
+
+  transform: rotate(90deg);
+}
+
+/* Success */
+
+.toast--success {
+  border-left-color: var(--color-success);
+}
+
+.toast--success .toast__icon {
+  color: var(--color-success);
+
+  background: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    var(--background-surface)
+  );
+}
+
+/* Error */
+
+.toast--error {
+  border-left-color: var(--color-danger);
+}
+
+.toast--error .toast__icon {
+  color: var(--color-danger);
+
+  background: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    var(--background-surface)
+  );
+}
+
+/* Info */
+
+.toast--info {
+  border-left-color: var(--color-info);
+}
+
+.toast--info .toast__icon {
+  color: var(--color-info);
+
+  background: color-mix(
+    in srgb,
+    var(--color-info) 10%,
+    var(--background-surface)
+  );
+}
+
+/* Tema oscuro */
+
+.dark-mode .toast,
+[data-theme="dark"] .toast {
+  background: var(--background-surface);
+
+  border-color: var(--border-color);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.dark-mode .toast__close:hover,
+[data-theme="dark"] .toast__close:hover {
+  background: var(--background-surface-alt);
+}
+
+/* Animación */
+
+@keyframes toastEnter {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .toastContainer {
+    right: var(--space-4);
+    left: var(--space-4);
+    bottom: var(--space-4);
+  }
+
+  .toast {
+    min-width: 100%;
+    max-width: 100%;
+
+    padding: var(--space-4);
+  }
+
+  .toast__icon {
+    width: 38px;
+    height: 38px;
+
+    font-size: 1.1rem;
+  }
+
+  .toast__title {
+    font-size: 0.9rem;
+  }
+
+  .toast__message {
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .toast {
+    gap: var(--space-3);
+
+    padding: var(--space-3);
+  }
+
+  .toast__icon {
+    width: 34px;
+    height: 34px;
+
+    font-size: 1rem;
+  }
+
+  .toast__close {
+    width: 30px;
+    height: 30px;
+  }
+
+  .toast__title {
+    font-size: 0.86rem;
+  }
+
+  .toast__message {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+}

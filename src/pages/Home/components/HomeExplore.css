@@ -1,0 +1,214 @@
+/* HomeExplore.css */
+/* Sección con las funciones principales de PokéLandia. */
+
+.homeExplore {
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(42, 117, 187, 0.09),
+      transparent 28%
+    ),
+    var(--background-page);
+}
+
+.homeExplore__header {
+  margin-inline: auto;
+
+  text-align: center;
+  align-items: center;
+}
+
+.homeExplore__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.homeFeatureCard {
+  overflow: hidden;
+
+  background: var(--card-background);
+
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--radius-xl);
+
+  box-shadow: var(--card-shadow);
+
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.homeFeatureCard:hover {
+  background: var(--card-background-hover);
+
+  border-color: var(--card-border-hover);
+
+  box-shadow: var(--card-shadow-hover);
+
+  transform: translateY(-6px);
+}
+
+.homeFeatureCard__imageBox {
+  position: relative;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: var(--background-surface-alt);
+}
+
+.homeFeatureCard__image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform var(--transition-slow);
+}
+
+.homeFeatureCard:hover .homeFeatureCard__image {
+  transform: scale(1.04);
+}
+
+.homeFeatureCard__content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  min-height: 245px;
+  padding: var(--space-6);
+}
+
+.homeFeatureCard__icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  margin-top: -44px;
+
+  background: var(--color-primary);
+  color: var(--button-text-color);
+
+  border: 4px solid var(--card-background);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+
+  font-size: 1.05rem;
+}
+
+.homeFeatureCard__title {
+  color: var(--title-color);
+
+  font-size: 1.28rem;
+  line-height: 1.2;
+}
+
+.homeFeatureCard__description {
+  color: var(--text-color-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.homeFeatureCard__link {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  margin-top: auto;
+
+  color: var(--color-secondary);
+
+  font-size: 0.92rem;
+  font-weight: 700;
+
+  transition:
+    color var(--transition-fast),
+    gap var(--transition-fast);
+}
+
+.homeFeatureCard__link:hover {
+  color: var(--color-secondary-hover);
+
+  gap: var(--space-3);
+}
+
+[data-theme="dark"] .homeExplore,
+.dark-mode .homeExplore {
+  background:
+    radial-gradient(
+      circle at 8% 10%,
+      rgba(255, 203, 5, 0.06),
+      transparent 28%
+    ),
+    var(--background-page);
+}
+
+[data-theme="dark"] .homeFeatureCard__icon,
+.dark-mode .homeFeatureCard__icon {
+  border-color: var(--card-background);
+}
+
+@media (max-width: 1080px) {
+  .homeExplore__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .homeFeatureCard:last-child {
+    grid-column: 1 / -1;
+
+    width: min(100%, 680px);
+
+    justify-self: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .homeExplore__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .homeFeatureCard:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .homeFeatureCard__content {
+    min-height: auto;
+
+    padding: var(--space-5);
+  }
+
+  .homeFeatureCard__icon {
+    width: 40px;
+    height: 40px;
+
+    margin-top: -40px;
+  }
+}
+
+@media (max-width: 390px) {
+  .homeFeatureCard__title {
+    font-size: 1.12rem;
+  }
+}

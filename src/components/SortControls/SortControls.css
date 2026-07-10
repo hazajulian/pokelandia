@@ -1,0 +1,351 @@
+/* SortControls.css */
+/* Selector de ordenamiento personalizado. */
+
+.sortControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  flex-wrap: wrap;
+}
+
+.sortControls--compact {
+  gap: var(--space-2);
+}
+
+.sortControls__label {
+  color: var(--text-color-soft);
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.sortControls__dropdown {
+  position: relative;
+
+  min-width: 280px;
+}
+
+.sortControls__trigger {
+  width: 100%;
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding:
+    0
+    16px;
+
+  background: var(--input-background);
+  color: var(--input-text-color);
+
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.sortControls__trigger:hover {
+  border-color: var(--color-secondary);
+
+  transform: translateY(-1px);
+}
+
+.sortControls__trigger:focus-visible {
+  outline: none;
+
+  border-color: var(--input-border-focus);
+
+  box-shadow: var(--input-shadow-focus);
+}
+
+.sortControls__selectedIcon {
+  display: grid;
+  place-items: center;
+
+  color: var(--color-secondary);
+
+  font-size: 1rem;
+
+  flex-shrink: 0;
+}
+
+.sortControls__selectedLabel {
+  flex: 1;
+
+  text-align: left;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sortControls__chevron {
+  color: var(--text-color-soft);
+
+  font-size: 0.85rem;
+
+  transition:
+    transform var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.sortControls--open
+  .sortControls__chevron {
+  color: var(--color-secondary);
+
+  transform: rotate(180deg);
+}
+
+.sortControls__menu {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--card-background);
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-lg);
+
+  opacity: 0;
+  visibility: hidden;
+
+  overflow: hidden;
+
+  transform: translateY(-8px);
+
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast),
+    visibility var(--transition-fast);
+
+  z-index: 40;
+}
+
+.sortControls__menu--open {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+.sortControls__option {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding:
+    12px
+    16px;
+
+  background: transparent;
+  color: var(--text-color);
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  text-align: left;
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.sortControls__option:hover {
+  background: rgba(42, 117, 187, 0.08);
+}
+
+.sortControls__option--selected {
+  background: rgba(42, 117, 187, 0.12);
+
+  color: var(--color-secondary);
+
+  font-weight: 700;
+}
+
+.sortControls__optionIcon {
+  width: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  color: inherit;
+
+  flex-shrink: 0;
+}
+
+.sortControls__optionLabel {
+  flex: 1;
+}
+
+.sortControls__check {
+  color: var(--color-secondary);
+
+  font-size: 0.9rem;
+}
+
+/* Tema oscuro */
+
+[data-theme="dark"]
+  .sortControls__trigger,
+.dark-mode
+  .sortControls__trigger {
+  background: var(--input-background);
+
+  border-color: var(--input-border-color);
+
+  color: var(--input-text-color);
+}
+
+[data-theme="dark"]
+  .sortControls__selectedIcon,
+.dark-mode
+  .sortControls__selectedIcon {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"]
+  .sortControls__chevron,
+.dark-mode
+  .sortControls__chevron {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"]
+  .sortControls__menu,
+.dark-mode
+  .sortControls__menu {
+  background: var(--card-background);
+
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"]
+  .sortControls__option:hover,
+.dark-mode
+  .sortControls__option:hover {
+  background: rgba(255, 203, 5, 0.08);
+}
+
+[data-theme="dark"]
+  .sortControls__option--selected,
+.dark-mode
+  .sortControls__option--selected {
+  background: rgba(255, 203, 5, 0.12);
+
+  color: var(--color-primary);
+}
+
+[data-theme="dark"]
+  .sortControls__check,
+.dark-mode
+  .sortControls__check {
+  color: var(--color-primary);
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .sortControls {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sortControls__dropdown {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .sortControls__label {
+    font-size: 0.88rem;
+  }
+
+  .sortControls__trigger {
+    min-height: 46px;
+
+    font-size: 0.88rem;
+  }
+
+  .sortControls__option {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sortControls__trigger {
+    min-height: 44px;
+
+    padding:
+      0
+      14px;
+
+    font-size: 0.84rem;
+  }
+
+  .sortControls__option {
+    padding:
+      11px
+      14px;
+
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .sortControls__label {
+    font-size: 0.82rem;
+  }
+
+  .sortControls__trigger,
+  .sortControls__option {
+    font-size: 0.8rem;
+  }
+}
