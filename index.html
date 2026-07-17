@@ -2,25 +2,22 @@
 <html lang="es">
   <head>
     <!-- Codificación -->
-
     <meta charset="UTF-8" />
 
     <!-- Responsive -->
-
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
 
-    <!-- SEO -->
-
+    <!-- SEO principal -->
     <title>
       PokéLandia | Pokédex moderna creada con React y PokéAPI
     </title>
 
     <meta
       name="description"
-      content="Explora más de 1000 Pokémon, consulta estadísticas, habilidades, tipos, evoluciones y movimientos en una Pokédex moderna desarrollada con React y PokéAPI."
+      content="Explora más de 1000 Pokémon, consulta estadísticas, habilidades, tipos y características en una Pokédex moderna desarrollada con React y PokéAPI."
     />
 
     <meta
@@ -44,9 +41,14 @@
     />
 
     <!-- Iconos -->
-
     <link
       rel="icon"
+      type="image/png"
+      href="/poke-ico.png"
+    />
+
+    <link
+      rel="shortcut icon"
       type="image/png"
       href="/poke-ico.png"
     />
@@ -61,15 +63,13 @@
       href="/site.webmanifest"
     />
 
-    <!-- Canonical -->
-
+    <!-- URL canónica -->
     <link
       rel="canonical"
       href="https://pokelandia-iota.vercel.app/"
     />
 
     <!-- Open Graph -->
-
     <meta
       property="og:type"
       content="website"
@@ -92,7 +92,7 @@
 
     <meta
       property="og:description"
-      content="Explora más de 1000 Pokémon con estadísticas, habilidades, tipos y movimientos en una Pokédex moderna desarrollada con React."
+      content="Explora más de 1000 Pokémon, consulta sus estadísticas, tipos y características en una Pokédex moderna desarrollada con React."
     />
 
     <meta
@@ -102,14 +102,38 @@
 
     <meta
       property="og:image"
-      content="https://pokelandia-iota.vercel.app/home-hero.png"
+      content="https://pokelandia-iota.vercel.app/poke-ico.png"
     />
 
-    <!-- Twitter -->
+    <meta
+      property="og:image:secure_url"
+      content="https://pokelandia-iota.vercel.app/poke-ico.png"
+    />
 
     <meta
+      property="og:image:type"
+      content="image/png"
+    />
+
+    <meta
+      property="og:image:width"
+      content="2052"
+    />
+
+    <meta
+      property="og:image:height"
+      content="2048"
+    />
+
+    <meta
+      property="og:image:alt"
+      content="Logo de PokéLandia"
+    />
+
+    <!-- Twitter / X -->
+    <meta
       name="twitter:card"
-      content="summary_large_image"
+      content="summary"
     />
 
     <meta
@@ -119,16 +143,20 @@
 
     <meta
       name="twitter:description"
-      content="Explora cientos de Pokémon desde una Pokédex moderna desarrollada con React y PokéAPI."
+      content="Explora más de 1000 Pokémon desde una Pokédex moderna desarrollada con React y PokéAPI."
     />
 
     <meta
       name="twitter:image"
-      content="https://pokelandia-iota.vercel.app/home-hero.png"
+      content="https://pokelandia-iota.vercel.app/poke-ico.png"
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Logo de PokéLandia"
     />
 
     <!-- Google Fonts -->
-
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -148,8 +176,7 @@
 
   <body>
     <noscript>
-      Necesitas habilitar JavaScript para utilizar
-      PokéLandia.
+      Necesitas habilitar JavaScript para utilizar PokéLandia.
     </noscript>
 
     <div id="root"></div>
